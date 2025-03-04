@@ -108,6 +108,11 @@ const Weather = () => {
 
     return ` ${location} ${isNight ? "at Night" : "During the Day"}`;
   }
+  const Clear = () => {
+    setWeather(null);
+    setLocation("");
+    setError(null);
+  };
   return (
     <div className="flex justify-center items-center h-screen bg-gray-300">
       <Card>
@@ -153,6 +158,7 @@ const Weather = () => {
               </div>
             </div>
           )}
+          <Button className="w-full mt-6 text-lg" onClick={Clear}>Clear</Button>
         </CardContent>
       </Card>
     </div>
